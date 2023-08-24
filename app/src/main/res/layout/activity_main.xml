@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.cesarolivera.proyectofinal.view.MainViewModel" />
+    </data>
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		tools:context=".MainActivity">
+
+		<EditText
+			android:id="@+id/primerTexto"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:hint="Ingrese el primer texto"
+			android:layout_marginTop="16dp"
+			android:text="@={viewModel.primerTexto}"/>
+
+		<EditText
+			android:id="@+id/segundoTexto"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:hint="Ingrese el segundo texto"
+			android:layout_below="@id/primerTexto"
+			android:layout_marginTop="8dp"
+			android:text="@={viewModel.segundoTexto}"/>
+
+		<Button
+			android:id="@+id/compareButton"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Comparar"
+			android:layout_below="@id/segundoTexto"
+			android:layout_centerHorizontal="true"
+			android:layout_marginTop="16dp"
+			android:onClick="@{() -> viewModel.compareTexts()}"/>
+
+		<TextView
+			android:id="@+id/resultTextView"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/compareButton"
+			android:layout_centerHorizontal="true"
+			android:layout_marginTop="16dp"
+			android:text="@{viewModel.resultLiveData}"
+			android:visibility="visible" />
+
+	</RelativeLayout>
+</layout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.MainActivity">
+
+	<TextView
+		android:id="@+id/welcome"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:fontFamily="sans-serif"
+		android:text="Proyecto Final"
+		android:textSize="34sp"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+	<LinearLayout
+        android:id="@+id/textos"
+        app:layout_constraintTop_toBottomOf="@id/welcome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+        <EditText
+            android:id="@+id/primerTexto"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_centerHorizontal="true"
+			android:layout_centerVertical="true"
+			android:hint="Primer Texto"/>
+        <Space
+            android:layout_width="32dp"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/segundoTexto"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_centerHorizontal="true"
+			android:layout_centerVertical="true"
+			android:hint="Segundo Texto"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/boton"
+        app:layout_constraintTop_toBottomOf="@id/textos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <Button
+            android:id="@+id/compare_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Comparar"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/resultados"
+        android:text="Resultado: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/boton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
